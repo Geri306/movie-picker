@@ -1,7 +1,7 @@
-package com.codecool.netflix.logic.util;
+package com.gergokovacs.moviepicker.logic.util;
 
-import com.codecool.netflix.data.enums.AgeCertification;
-import com.codecool.netflix.data.enums.Type;
+import com.gergokovacs.moviepicker.data.enums.AgeCertification;
+import com.gergokovacs.moviepicker.data.enums.Type;
 
 import java.util.Arrays;
 import java.util.List;

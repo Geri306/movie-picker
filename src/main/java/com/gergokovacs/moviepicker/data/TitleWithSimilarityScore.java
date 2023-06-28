@@ -1,4 +1,4 @@
-package com.codecool.netflix.data;
+package com.gergokovacs.moviepicker.data;
 
 import java.util.Objects;
 

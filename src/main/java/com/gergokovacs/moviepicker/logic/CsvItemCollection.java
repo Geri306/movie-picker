@@ -1,4 +1,4 @@
-package com.codecool.netflix.logic;
+package com.gergokovacs.moviepicker.logic;
 
 import java.io.IOException;
 

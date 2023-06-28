@@ -1,4 +1,4 @@
-package com.codecool.netflix.data.enums;
+package com.gergokovacs.moviepicker.data.enums;
 
 
 import java.util.Arrays;

@@ -1,6 +1,6 @@
-package com.codecool.netflix.data;
+package com.gergokovacs.moviepicker.data;
 
-import com.codecool.netflix.data.enums.Role;
+import com.gergokovacs.moviepicker.data.enums.Role;
 
 import java.util.Objects;
 

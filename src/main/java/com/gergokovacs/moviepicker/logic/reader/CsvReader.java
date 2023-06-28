@@ -1,4 +1,4 @@
-package com.codecool.netflix.logic.reader;
+package com.gergokovacs.moviepicker.logic.reader;
 
 import java.util.LinkedList;
 import java.util.List;

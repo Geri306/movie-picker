@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="netflix-recommendations" />
+        <module name="movie-picker" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="netflix-recommendations" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

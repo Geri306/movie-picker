@@ -1,9 +1,9 @@
-package com.codecool.netflix.logic;
+package com.gergokovacs.moviepicker.logic;
 
-import com.codecool.netflix.data.Credit;
-import com.codecool.netflix.data.Title;
-import com.codecool.netflix.data.enums.Role;
-import com.codecool.netflix.data.enums.Type;
+import com.gergokovacs.moviepicker.data.Credit;
+import com.gergokovacs.moviepicker.data.Title;
+import com.gergokovacs.moviepicker.data.enums.Role;
+import com.gergokovacs.moviepicker.data.enums.Type;
 
 import java.util.ArrayList;
 import java.util.List;

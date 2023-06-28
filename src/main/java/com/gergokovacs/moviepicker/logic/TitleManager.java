@@ -1,9 +1,9 @@
-package com.codecool.netflix.logic;
+package com.gergokovacs.moviepicker.logic;
 
-import com.codecool.netflix.data.Credit;
-import com.codecool.netflix.data.Title;
-import com.codecool.netflix.data.TitleWithSimilarityScore;
-import com.codecool.netflix.logic.reader.TitleReader;
+import com.gergokovacs.moviepicker.data.Credit;
+import com.gergokovacs.moviepicker.data.Title;
+import com.gergokovacs.moviepicker.data.TitleWithSimilarityScore;
+import com.gergokovacs.moviepicker.logic.reader.TitleReader;
 
 import java.io.IOException;
 import java.util.*;
@@ -30,7 +30,6 @@ public class TitleManager implements CsvItemCollection {
                 .filter(t -> t.getImdbScore() != null)
                 .sorted(Comparator.comparing(Title::getImdbScore).reversed())
                 .toList();
-
         return myList.stream().limit(n).collect(Collectors.toList());
     }
 
@@ -44,16 +43,12 @@ public class TitleManager implements CsvItemCollection {
                 .stream()
                 .filter(t -> t.getGenres().contains(genre) && t.getImdbScore() != null)
                 .sorted(Comparator.comparing(Title::getImdbScore).reversed()).toList();
-
         return titlesFromOneGenre.stream().limit(length).collect(Collectors.toList());
     }
 
     public List<TitleWithSimilarityScore> getSimilarMoviesByTitle(String titleName, List<Credit> allCredits, Integer length) throws IOException {
-
         Title titleOfInterest = titles.stream().filter(t -> t.getTitle().equalsIgnoreCase(titleName)).findAny().orElse(null);
-
         List<TitleWithSimilarityScore> titlesWithSimilarityScores = new ArrayList<>();
-
         try {
             titles.stream()
                     .map(title -> new TitleWithSimilarityScore(title, comparator.calculateSimilarityScore(Objects.requireNonNull(titleOfInterest), title, allCredits)))
@@ -62,11 +57,8 @@ public class TitleManager implements CsvItemCollection {
             String errorMsg = String.format("Title with name '%s' not found!\n", titleName);
             throw new NoSuchElementException(errorMsg, e.getCause());
         }
-
         removeTitleOfInterestFromList(titleOfInterest, titlesWithSimilarityScores);
-
         titlesWithSimilarityScores.sort(Comparator.comparing(TitleWithSimilarityScore::getSimilarityScore).reversed());
-
         return titlesWithSimilarityScores.stream().limit(length).collect(Collectors.toList());
     }
 

@@ -1,8 +1,8 @@
-package com.codecool.netflix.ui;
+package com.gergokovacs.moviepicker.ui;
 
-import com.codecool.netflix.data.Credit;
-import com.codecool.netflix.data.Title;
-import com.codecool.netflix.data.TitleWithSimilarityScore;
+import com.gergokovacs.moviepicker.data.Credit;
+import com.gergokovacs.moviepicker.data.Title;
+import com.gergokovacs.moviepicker.data.TitleWithSimilarityScore;
 
 import java.util.LinkedHashMap;
 import java.util.List;

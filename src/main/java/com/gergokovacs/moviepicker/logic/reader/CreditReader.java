@@ -1,6 +1,6 @@
-package com.codecool.netflix.logic.reader;
+package com.gergokovacs.moviepicker.logic.reader;
 
-import com.codecool.netflix.data.Credit;
+import com.gergokovacs.moviepicker.data.Credit;
 
 import java.io.IOException;
 import java.util.List;

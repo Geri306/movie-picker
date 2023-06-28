@@ -1,25 +1,25 @@
-package com.codecool.netflix;
+package com.gergokovacs.moviepicker;
 
-import com.codecool.netflix.logic.CreditManager;
-import com.codecool.netflix.logic.TitleManager;
-import com.codecool.netflix.ui.Printer;
-import com.codecool.netflix.ui.InputScanner;
-import com.codecool.netflix.data.Credit;
-import com.codecool.netflix.data.Title;
-import com.codecool.netflix.data.TitleWithSimilarityScore;
+import com.gergokovacs.moviepicker.data.Credit;
+import com.gergokovacs.moviepicker.data.Title;
+import com.gergokovacs.moviepicker.data.TitleWithSimilarityScore;
+import com.gergokovacs.moviepicker.logic.CreditManager;
+import com.gergokovacs.moviepicker.logic.TitleManager;
+import com.gergokovacs.moviepicker.ui.InputScanner;
+import com.gergokovacs.moviepicker.ui.Printer;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class NetflixApplication {
+public class MoviePicker {
     private final TitleManager titles;
     private final CreditManager credits;
     private final InputScanner scanner;
     private final Printer printer;
 
 
-    public NetflixApplication(CreditManager credits, TitleManager titles, InputScanner scanner, Printer printer) {
+    public MoviePicker(CreditManager credits, TitleManager titles, InputScanner scanner, Printer printer) {
         this.credits = credits;
         this.titles = titles;
         this.scanner = scanner;
@@ -37,9 +37,7 @@ public class NetflixApplication {
 
     private boolean invokeMenuItem(Integer selectedMenu) {
         switch (selectedMenu) {
-            case 0 -> {
-                return false;
-            }
+            case 0 -> { return false; }
             case 1 -> getTopNImdbScoreFromTitles();
             case 2 -> getAllCreditsForTitle();
             case 3 -> getTopNImdbScoreFromGivenGenre();
@@ -47,7 +45,7 @@ public class NetflixApplication {
             case 5 -> recommendMeSomethingBasedOnAMovie();
             default -> System.out.println("Invalid menu item selection!\n");
         }
-    return true;
+        return true;
     }
 
 
@@ -59,11 +57,11 @@ public class NetflixApplication {
 
     private void getAllCreditsForTitle() {
         List<Credit> allCreditsForTitle = null;
-        while (allCreditsForTitle == null){
+        while (allCreditsForTitle == null) {
             String movieTitle = scanner.getUserInput("Type in a name!");
             try {
                 allCreditsForTitle = titles.getAllCreditsForTitle(movieTitle, credits.getCredits());
-            } catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -85,13 +83,13 @@ public class NetflixApplication {
 
     private void recommendMeSomethingBasedOnAMovie() {
         List<TitleWithSimilarityScore> similarMoviesByTitle = null;
-        while (similarMoviesByTitle == null){
+        while (similarMoviesByTitle == null) {
             String title = scanner.getUserInput("Type in a name!");
             Integer length = scanner.getNumericUserInput("Length of the list?");
             try {
                 System.out.println("Loading...");
                 similarMoviesByTitle = titles.getSimilarMoviesByTitle(title, credits.getCredits(), length);
-            } catch (NoSuchElementException e){
+            } catch (NoSuchElementException e) {
                 System.out.println(e.getMessage());
             } catch (IOException e) {
                 throw new RuntimeException(e);

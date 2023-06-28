@@ -1,4 +1,4 @@
-package com.codecool.netflix.ui;
+package com.gergokovacs.moviepicker.ui;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

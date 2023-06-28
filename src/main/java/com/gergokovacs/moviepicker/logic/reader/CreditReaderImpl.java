@@ -1,7 +1,7 @@
-package com.codecool.netflix.logic.reader;
+package com.gergokovacs.moviepicker.logic.reader;
 
-import com.codecool.netflix.data.Credit;
-import com.codecool.netflix.data.enums.Role;
+import com.gergokovacs.moviepicker.data.Credit;
+import com.gergokovacs.moviepicker.data.enums.Role;
 
 import java.io.*;
 import java.util.ArrayList;

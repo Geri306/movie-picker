@@ -1,15 +1,15 @@
-package com.codecool.netflix;
+package com.gergokovacs.moviepicker;
 
-import com.codecool.netflix.ui.Printer;
-import com.codecool.netflix.logic.CreditManager;
-import com.codecool.netflix.logic.TitleManager;
-import com.codecool.netflix.ui.InputScanner;
-import com.codecool.netflix.logic.reader.CreditReader;
-import com.codecool.netflix.logic.reader.TitleReader;
-import com.codecool.netflix.logic.reader.CreditReaderImpl;
-import com.codecool.netflix.logic.reader.TitleReaderImpl;
-import com.codecool.netflix.logic.SimilarityScoreCalculator;
-import com.codecool.netflix.logic.util.TypeConverter;
+import com.gergokovacs.moviepicker.ui.Printer;
+import com.gergokovacs.moviepicker.logic.CreditManager;
+import com.gergokovacs.moviepicker.logic.TitleManager;
+import com.gergokovacs.moviepicker.ui.InputScanner;
+import com.gergokovacs.moviepicker.logic.reader.CreditReader;
+import com.gergokovacs.moviepicker.logic.reader.TitleReader;
+import com.gergokovacs.moviepicker.logic.reader.CreditReaderImpl;
+import com.gergokovacs.moviepicker.logic.reader.TitleReaderImpl;
+import com.gergokovacs.moviepicker.logic.SimilarityScoreCalculator;
+import com.gergokovacs.moviepicker.logic.util.TypeConverter;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ public class Main {
         SimilarityScoreCalculator similarityScoreCalculator = new SimilarityScoreCalculator();
         CreditManager credits = new CreditManager(creditReader);
         TitleManager titles = new TitleManager(titleReader, similarityScoreCalculator);
-        NetflixApplication application = new NetflixApplication(credits, titles, scanner, printer);
+        MoviePicker application = new MoviePicker(credits, titles, scanner, printer);
 
         //read CSVs
         credits.init();
