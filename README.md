@@ -10,6 +10,6 @@ Installation on Windows 11 with PowerShell 5.1 (see version with `Get-Host` comm
 - `mvn compile` -- You're good if there are no red [ERROR] messages.
 - `mvn package` -- You're good if there are no red [ERROR] messages.
 - `java -jar .\target\<full-name-of-compiled-file-with-jar-extension>` -- Look into the target folder and you'll see the neccessary file.
-- Now you should see the main menu items (numbered from 0 to 5) appear. Well done!
+- Now you should see the main menu items (numbered from 0 to 5) appear. Well done, give it a go and play around with the app!
 
 <img width="556" alt="image" src="https://github.com/Geri306/netflix-recommendations/assets/107036298/91999e61-1fab-451f-b9c9-7fc430b13e4c">
